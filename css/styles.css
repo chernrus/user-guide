@@ -1,10 +1,8 @@
 body{
-  min-width: 960px;
-  margin: 0;
-  padding: 0;
+  min-width: 100%;
   background-color: white;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 100%;
+  line-height: 200%;
   font-family: "PT Sans Narrow", sans-serif, Arial;
   font-weight: 700;
   text-transform: uppercase;
@@ -16,6 +14,7 @@ div{
 
 h1,h2,p{
   text-align: center;
+  margin: 0 auto;
 }
 
 h3{
@@ -29,19 +28,21 @@ h3{
 }
 
 .container-guide {
-  width: 940px;
+  width: 90%;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .install-guide, .registration-guide, .connect-guide{
-  width: 940px;
+  max-width: 1500px;
   margin: 0 auto;
+  text-align: center;
+
 }
 
 .guide-block{
   float: left;
   width: 300px;
-  margin-right: 20px;
   text-align: center;
   margin: 0 auto;
 }
