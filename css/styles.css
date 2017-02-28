@@ -1,24 +1,43 @@
 body{
-  min-width: 100%;
-  background-color: white;
-  font-size: 100%;
-  line-height: 200%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "PT Sans Narrow", sans-serif, Arial;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
-div{
-  display: block;
+header{
+  margin: 0 10px;
 }
 
-h1,h2,p{
+h1, h2, h3, p {
   text-align: center;
-  margin: 0 auto;
+  font-size: 100%;
+  margin: 0.75em 0 1em;
 }
 
-h3{
-  height: 80px;
+.main-header {
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+
+.main-title {
+  margin: auto;
+  width: 90%;
+  font-size: 28px;
+}
+
+.block-title {
+  font-size: 80%;
+  min-height: 60px;
+  margin: 0;
+  position:  inherit;
+  text-transform: none;
+}
+
+img{
+  margin-top: 10px;
+  width: 100%;
 }
 
 .clearfix::after {
@@ -27,22 +46,53 @@ h3{
   clear: both;
 }
 
+.main-container {
+  margin: 0 auto;
+  width: 98%;
+}
+
+.main-container p {
+  font-size: 80%;
+}
+
 .container-guide {
+  width: 98%;
+  margin: auto;
+}
+
+.install-guide, .registration-guide, .connect-guide {
   width: 90%;
   margin: 0 auto;
-  padding: 0 30px;
-}
-
-.install-guide, .registration-guide, .connect-guide{
-  max-width: 1500px;
-  margin: 0 auto;
   text-align: center;
-
 }
 
-.guide-block{
+.guide-block {
   float: left;
-  width: 300px;
-  text-align: center;
-  margin: 0 auto;
+  width: 30%;
+  margin: 0 3% 1.5em 0;
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    width: auto;
+  }
+
+  .guide-block {
+    font-size: 10px;
+    float: left;
+    width: 45%;
+    margin: 0 3% 1.5em 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-container {
+    width: auto;
+  }
+
+  .guide-block {
+    float: left;
+    width: 15%;
+    margin: 0 3% 1.5em 0;
+  }
 }
