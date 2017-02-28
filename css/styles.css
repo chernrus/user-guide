@@ -1,0 +1,47 @@
+body{
+  min-width: 960px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", sans-serif, Arial;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+div{
+  display: block;
+}
+
+h1,h2,p{
+  text-align: center;
+}
+
+h3{
+  height: 80px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container-guide {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.install-guide, .registration-guide, .connect-guide{
+  width: 940px;
+  margin: 0 auto;
+}
+
+.guide-block{
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
