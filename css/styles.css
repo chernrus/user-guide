@@ -1,98 +1,94 @@
-body{
+body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans Narrow", sans-serif, Arial;
-  text-transform: uppercase;
-}
-
-header{
-  margin: 0 10px;
-}
-
-h1, h2, h3, p {
   text-align: center;
-  font-size: 100%;
-  margin: 0.75em 0 1em;
-}
-
-.main-header {
-  padding: 0 10px;
-  margin-bottom: 40px;
-}
-
-.main-title {
-  margin: auto;
-  width: 90%;
-  font-size: 28px;
-}
-
-.block-title {
-  font-size: 80%;
-  min-height: 60px;
-  margin: 0;
-  position:  inherit;
-  text-transform: none;
+  font-size: 14px;
 }
 
 img{
-  margin-top: 10px;
-  width: 100%;
+  max-width: 100%;
 }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .main-container {
-  margin: 0 auto;
-  width: 98%;
-}
-
-.main-container p {
-  font-size: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .container-guide {
-  width: 98%;
+  width: 100%;
   margin: auto;
+}
+
+.container-guide p {
+  font-size: 14px;
 }
 
 .install-guide, .registration-guide, .connect-guide {
   width: 90%;
   margin: 0 auto;
-  text-align: center;
 }
 
 .guide-block {
-  float: left;
-  width: 30%;
-  margin: 0 3% 1.5em 0;
+  margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-  .main-container {
-    width: auto;
-  }
+.block-title {
+  font-size: 16px;
+}
 
+/*@media (min-width: 480px) {
+  .main-container {
+    width: 100%;
+  }
   .guide-block {
-    font-size: 10px;
+    max-width: 45%;
+  }
+}*/
+
+.guide-block:nth-child(1) {
+  color: red;
+}
+
+@media (min-width: 500px) {
+  .guide-block {
+    max-width: 45%;
     float: left;
-    width: 45%;
-    margin: 0 3% 1.5em 0;
+    margin-right: 20px;
+  }
+  .block-title {
+    min-height: 60px;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
   .main-container {
-    width: auto;
+    width: 750px;
   }
+}
 
+@media (min-width: 992px) {
+  .main-container {
+    width: 970px;
+  }
   .guide-block {
-    float: left;
-    width: 15%;
-    margin: 0 3% 1.5em 0;
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-container {
+    width: 1240px;
+  }
+  .guide-block {
+    max-width: 20%;
   }
 }
