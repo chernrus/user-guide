@@ -1,0 +1,72 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slider {
+	position:relative;
+	width: 320px;
+  margin-left: 20px;
+  margin-right: 20px;
+	padding-top: 560px;
+	text-align: center;
+}
+
+img {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slider-check {
+	display: none;
+	overflow: hidden;
+}
+
+.slider-image {
+  position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.slider-label {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: #069;
+	border-radius: 50%;
+	text-indent: -9999px;
+}
+
+.android-guide {
+  float: left;
+}
+
+/* Display */
+.slider-image {
+	display: none;
+}
+
+.slider-check:checked + .slider-label + .slider-image {
+	display: block;
+}
+
+/* Current */
+.slider-check:checked + .slider-label {
+	background: #C00;
+}
