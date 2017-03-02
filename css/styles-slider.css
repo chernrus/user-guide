@@ -63,7 +63,7 @@ img {
 }
 
 .slider-check:checked + .slider-label + .slider-image {
-	display: block;
+	display: inline-block;
 }
 
 /* Current */

@@ -1,93 +1,93 @@
 body {
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
 }
 
 /* Размер изображения (по ширине 100%) */
 img {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 /* Псевдоэлемент - распорка */
 .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* Блок-обертка основного содержимого страницы -
 инструкций для Android и IOS устройств
 * Включает .container-guide */
 .main-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /* Обертка для конкретных инструкций - "Установка",
 "Регистрация", "Подключение" */
 .container-guide {
-  width: 100%;
-  margin: 0 auto;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .install-guide,
 .registration-guide,
 .connect-guide {
-  width: 90%;
-  margin: 0 auto;
+	width: 90%;
+	margin: 0 auto;
 }
 
 /* Размер шрифта для примечаний в параграфе - чтобы не было мелко */
 .container-guide p {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .image-title {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 /* Медиа запрос для разрешения 500px поширине
 (фаблеты, мобильные - горизонтальная ориентация) */
 @media (min-width: 500px) {
-  /* Блок изображения img и заголовка изображения .image-title */
-  .image-block {
-    float: left;
-    max-width: 45%;
-    margin-right: 20px;
-  }
-  .image-title {
-    min-height: 60px;
-  }
+	/* Блок изображения img и заголовка изображения .image-title */
+	.image-block {
+		float: left;
+		max-width: 45%;
+		margin-right: 20px;
+	}
+	.image-title {
+		min-height: 60px;
+	}
 }
 
 /* Медиа запрос для разрешения 768px поширине
 (планшеты) */
 @media (min-width: 768px) {
-  .main-container {
-    width: 750px;
-  }
+	.main-container {
+		width: 750px;
+	}
 }
 
 /* Медиа запрос для разрешения 992px поширине
 (средние экраны) */
 @media (min-width: 992px) {
-  .main-container {
-    width: 970px;
-  }
-  .image-block {
-    max-width: 30%;
-  }
+	.main-container {
+		width: 970px;
+	}
+	.image-block {
+		max-width: 30%;
+	}
 }
 
 /* Медиа запрос для разрешения 1280px поширине (большие экраны) */
 @media (min-width: 1280px) {
-  .main-container {
-    width: 1240px;
-  }
-  .image-block {
-    max-width: 20%;
-  }
+	.main-container {
+		width: 1240px;
+	}
+	.image-block {
+		max-width: 20%;
+	}
 }
