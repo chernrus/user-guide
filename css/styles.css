@@ -45,19 +45,6 @@ img{
   font-size: 16px;
 }
 
-/*@media (min-width: 480px) {
-  .main-container {
-    width: 100%;
-  }
-  .guide-block {
-    max-width: 45%;
-  }
-}*/
-
-.guide-block:nth-child(1) {
-  color: red;
-}
-
 @media (min-width: 500px) {
   .guide-block {
     max-width: 45%;
