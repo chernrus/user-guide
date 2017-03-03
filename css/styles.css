@@ -49,6 +49,20 @@ img {
   font-size: 16px;
 }
 
+.feedback-container {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.feedback-form input {
+  width: 95%;
+  padding: 5px 2%;
+  margin: 10px 0;
+}
+
 /* Медиа запрос для разрешения 500px поширине
 (фаблеты, мобильные - горизонтальная ориентация) */
 @media (min-width: 500px) {
@@ -67,7 +81,7 @@ img {
 (планшеты) */
 @media (min-width: 768px) {
   .main-container {
-    width: 750px;
+    width: 738px;
   }
 }
 
@@ -75,7 +89,7 @@ img {
 (средние экраны) */
 @media (min-width: 992px) {
   .main-container {
-    width: 970px;
+    width: 962px;
   }
   .image-block {
     max-width: 30%;
@@ -85,7 +99,7 @@ img {
 /* Медиа запрос для разрешения 1280px поширине (большие экраны) */
 @media (min-width: 1280px) {
   .main-container {
-    width: 1240px;
+    width: 1250px;
   }
   .image-block {
     max-width: 20%;
