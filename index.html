@@ -176,17 +176,25 @@
       </div>
       <!-- Форма обратной связи -->
       <div class="feedback-container">
-        <button>Обратная связь</button>
-        <div class="popup-feedback">
-          <form class="feedback-form">
-            <input class="name" type="text" placeholder="Имя">
-            <input class="phone" type="text" placeholder="Телефон">
-            <input class="email" type="text" placeholder="Email">
+        <button class="feedback-btn" onclick="showPopup()">Обратная связь</button>
+        <div class="popup-feedback"> <!--style="display: none">-->
+          <form class="feedback-form" onsubmit="validation(event)">
+            <input class="name" type="text" placeholder="Имя" minlength="5">
+            <div class="phone-block">
+              <select class="country-code">
+                <option data-countryCode="RU" value="+7" Selected>RU (+7)</option>
+                <option data-countryCode="US" value="+1">USA (+1)</option>
+              </select>
+              <input class="phone" type="text" placeholder="Телефон">
+            </div>
+            <input class="email" type="email" placeholder="Email">
             <textarea class="message" placeholder="Сообщение"></textarea>
-            <input type="submit" value="Отправить"></input>
+            <button class="" type="submit">Отправить</button>
           </form>
+          <!-- <div class="overlay" onclick="hidePopup()"></div> -->
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="scripts/script.js"></script>
   </body>
 </html>
