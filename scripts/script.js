@@ -21,9 +21,16 @@ function validation(event) {
   event.preventDefault();
   var phone = document.getElementsByClassName("country-code")[0].value +
     document.getElementsByClassName("phone")[0].value;
-  console.log(phone);
   var email = document.getElementsByClassName("email")[0].value;
-  console.log(validatePhone(phone));
+
+  if(validatePhone(email)) {
+    console.log(phone + validatePhone(phone));
+    return true;
+  } else {
+    console.log(phone + validatePhone(phone));
+    return false;
+  };
+
   if(validateEmail(email)) {
     return true;
   } else {
