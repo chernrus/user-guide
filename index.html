@@ -179,17 +179,20 @@
         <!-- <button class="feedback-btn" onclick="showPopup()">Обратная связь</button> -->
         <div class="popup-feedback"> <!--style="display: none">-->
           <form class="feedback-form" name="formH" onsubmit="validation(event)">
-            <input name="name" type="text" placeholder="Имя" minlength="5" required value="MyName">
+            <span class="responseMessage">
+
+            </span>
+            <input name="name" type="text" placeholder="Ваше имя" required value="MyName">
             <div class="phone-block">
               <select name="country-code">
                 <option data-countryCode="RU" value="7" Selected>RU (+7)</option>
                 <option data-countryCode="US" value="1">USA (+1)</option>
               </select>
-              <input name="phone" type="text" placeholder="Телефон" minlength="10" required value="555-123-4567">
+              <input name="phone" type="text" placeholder="Ваш номер телефона" required value="555-123-4567">
             </div>
-            <input name="email" type="email" placeholder="Email" required value="example@mail.com">
-            <textarea name="text" placeholder="Сообщение" minlength="10">AbcdefghijklmnopqrsT</textarea>
-            <button class="" type="submit">Отправить</button>
+            <input name="email" type="email" placeholder="Ваш email" required value="example@mail.com">
+            <textarea name="text" placeholder="Сообщение с вопросом">AbcdefghijklmnopqrsT</textarea>
+            <button class="send-btn" type="submit">Отправить</button>
           </form>
           <!-- <div class="overlay" onclick="hidePopup()"></div> -->
         </div>

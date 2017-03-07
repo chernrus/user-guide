@@ -58,9 +58,6 @@ img {
 }
 
 .popup-feedback {
-  /*top: 0;
-  left: 0;
-  position: fixed;*/
   display: inline-block;
   padding-left: 25px;
   padding-right: 25px;
@@ -78,44 +75,58 @@ img {
 }*/
 
 .feedback-form {
-  width: 350px;
+  width: 420px;
   background: #fff;
 }
 
 .feedback-form input {
-
+  width: 400px;
   padding: 5px 2%;
   margin: 10px 0;
 }
 
-.message {
+/*.message {
   width: 90%;
   height: 50px;
-}
+}*/
 
+
+input[type="text"],
 input[type="email"] {
-  border: 1px solid #ddd;
+  height: 25px;
+  border: 1px solid #aaa;
   padding: 4px 8px;
 }
 
-input[type="email"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea[name="text"]:focus {
   border: 1px solid #000;
 }
 
-input[type="submit"] {
-  font-weight: bold;
-  padding: 4px 8px;
-  border:1px solid #000;
-  background: #3b5998;
-  color:#fff;
+select[name="country-code"] {
+  height: 30px;
+  width: 18%;
 }
 
-.country-code {
-  width: 20%;
+input[name="phone"] {
+  width: 76%;
 }
 
-.phone {
-  width: 60%;
+textarea[name="text"] {
+  width: 400px;
+  height: 100px;
+  padding: 5px 2%;
+  margin: 10px 0;
+}
+
+.send-btn {
+  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(56,212,56); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
 }
 
 /* Медиа запрос для разрешения 500px поширине
