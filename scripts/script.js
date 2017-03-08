@@ -5,14 +5,40 @@ var config = {
   text: 'Сообщение'
 }
 
-var showPopup = function () {
-  document.getElementsByClassName('popup-feedback')[0].style.display = 'block';
-};
+// Get the modal
+var feedback = document.getElementById('feedback');
 
-var hidePopup = function () {
-  document.getElementsByClassName('popup-feedback')[0].style.display = 'none';
-  console.log('safdsfsdfsd');
-};
+// Get the button that opens the modal
+var btn = document.getElementById("btn-show");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    feedback.style.display = "inline-block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    feedback.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == feedback) {
+        feedback.style.display = "none";
+    }
+}
+
+// var showPopup = function () {
+//   document.getElementsByClassName('popup-feedback')[0].style.display = 'inline-block';
+// };
+//
+// var hidePopup = function () {
+//   document.getElementsByClassName('popup-feedback')[0].style.display = 'none';
+//   console.log('safdsfsdfsd');
+// };
 
 var validateName = function (name) {
   return (name.length >= 5);
@@ -62,11 +88,14 @@ var makeRequest = function (url, callback, method, formData){
 var responseCallback = function (res) {
   var result = JSON.parse(res);
   console.log(result);
+  //цикл для проверки всех неправильных полей
   if (result.status == "error") {
-    document.getElementsByName(result.fields[0])[0].style.border= '1px solid red';
-    showErrorMessage(result);
+    result.fields.forEach(function(field) {
+      changeFieldColor(field, 'red');
+    });
+    showErrorMessage(result.fields);
   } else {
-    showSuccessMessage(result);
+    showSuccessMessage();
     console.log(result.status);
   };
 };
@@ -75,24 +104,34 @@ var responseCallback = function (res) {
 var sendForm = function (formData) {
   var method = "POST",
   url = "https://test.em70.ru/rav/callback/";
-
   makeRequest(url, responseCallback, method, formData);
 };
 
-var showErrorMessage = function (result) {
-  document.getElementsByClassName("responseMessage")[0].innerText = "Неправильное поле - " +
-  config[result.fields[0]];
-   document.getElementsByClassName("responseMessage")[0].style.color = "red";
+var showErrorMessage = function (error) {
+  var result = error.reduce(function(sum, current) {
+    return sum + ' ' + config[current];
+  }, '');
+  console.log(result);
+  document.getElementsByClassName("responseMessage")[0].innerText = "Вы ввели некоректные данные в поля - " + result;
+
+    // config[error.fields[0]];
+  document.getElementsByClassName("responseMessage")[0].style.color = "red";
 };
 
-var showSuccessMessage = function (result) {
+var showSuccessMessage = function () {
   document.getElementsByClassName("responseMessage")[0].innerText = "Сообщение успешно отправлено";
   document.getElementsByClassName("responseMessage")[0].style.color = "green";
+};
+
+var changeFieldColor = function (atributeName, color) {
+  document.getElementsByName(atributeName)[0].style.border= '2px solid ' + color;
 };
 
 // main функция - валидация формы, отправка данных - sendForm
 var validation = function (event) {
   event.preventDefault();
+  var validationState = true;
+  var fields = [];
 
   var formData = new FormData(document.forms.formH);
   var nameForValidate = formData.get("name");
@@ -102,41 +141,54 @@ var validation = function (event) {
 
   if(validateName(nameForValidate)) {
     console.log(validateName(nameForValidate));
-    document.getElementsByName('name')[0].style.border= '1px solid green';
+    changeFieldColor('name', 'green');
   } else {
     console.log(validateName(nameForValidate));
-    document.getElementsByName('name')[0].style.border= '1px solid red';
-    return false;
+    changeFieldColor('name', 'red');
+    validationState = false;
+    fields.push('name');
   };
 
   if(validatePhone(phoneForValidate)) {
-    document.getElementsByName('phone')[0].style.border= '1px solid green';//сделать поле зеленым !!!!!В ОТДЕЛЬНУЮ ФУНКЦИЮ!!!
-
+    changeFieldColor('phone', 'green');//сделать поле зеленым !!!!!В ОТДЕЛЬНУЮ ФУНКЦИЮ!!!
     phone = transformPhone(phoneForValidate);
-    formData.set("phone",phone);
+    formData.set('phone',phone);
   } else {
-    document.getElementsByName('phone')[0].style.border= '1px solid red';
-    return false;
+    changeFieldColor('phone', 'red');
+    validationState = false;
+    fields.push('phone');
   };
 
   if(validateEmail(emailForValidate)) {
-    document.getElementsByName('email')[0].style.border= '1px solid green';//сделать поле зеленым
+    changeFieldColor('email', 'green');//сделать поле зеленым
   } else {
-    document.getElementsByName('email')[0].style.border= '1px solid red';//сделать поле красным, вывести ошибку
-    return false;
+    changeFieldColor('email', 'red');//сделать поле красным, вывести ошибку
+    validationState = false;
+    fields.push('email');
   };
 
   if(validateText(textForValidate)) {
     console.log(validateText(textForValidate));
-    document.getElementsByName('text')[0].style.border= '1px solid green';
+    changeFieldColor('text', 'green');
   } else {
      console.log(validateText(textForValidate));
-     document.getElementsByName('text')[0].style.border= '1px solid red';
-     return false;
+     changeFieldColor('text', 'red');
+     validationState = false;
+     fields.push('text');
   };
 
-  formData.delete("country-code");
-  sendForm(formData);
+    // formData.set("name","asdfsdf");
+    // formData.set("text","adsfdsfdsfdsfsdfdsfsdfsd");
+    // formData.set("phone","a");
+    // formData.set("email","adsfsdfsdfsdfsdfsdfsdfdsf");
+
+  if(validationState) {
+    formData.delete("country-code");
+    sendForm(formData);
+  } else {
+    showErrorMessage(fields);
+    return false;
+  }
 
   console.log(formData.get("name") + '\n' + formData.get("phone") + '\n'
     + formData.get("email") + '\n' +  formData.get("text"));
