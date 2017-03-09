@@ -7,11 +7,13 @@ var config = {
 
 // Получаем элементы
 var feedback = document.getElementById('feedback');
-var btn = document.getElementById("btn-show");
+var showBtn = document.getElementById("btn-show");
 var span = document.getElementsByClassName("close")[0];
+var sendBtn = document.getElementById("send-btn")
+var load = document.getElementById("cssload-wrapper");
 
 //Открытие формы по нажатию кнопки
-btn.onclick = function() {
+showBtn.onclick = function() {
     feedback.style.display = "inline-block";
 }
 
@@ -99,23 +101,30 @@ var showErrorMessage = function (error) {
     return sum + ' ' + config[current];
   }, '');
   document.getElementsByClassName("responseMessage")[0].innerText = "Вы ввели некоректные данные в поля - " + result;
-
-    // config[error.fields[0]];
   document.getElementsByClassName("responseMessage")[0].style.color = "red";
+  changeBtn("#0088cc", 'none', false);
 };
 
 var showSuccessMessage = function () {
   document.getElementsByClassName("responseMessage")[0].innerText = "Сообщение успешно отправлено";
   document.getElementsByClassName("responseMessage")[0].style.color = "green";
+  changeBtn("#0088cc", 'none', false);
 };//->
 
 var changeFieldColor = function (atributeName, color) {
   document.getElementsByName(atributeName)[0].style.border= '1px solid ' + color;
 };
 
+var changeBtn = function (color, property, flag) {
+  sendBtn.disabled = flag;
+  sendBtn.style.background = color;
+  load.style.display = property;
+};
+
 // main функция - валидация формы, отправка данных - sendForm
 var validation = function (event) {
   event.preventDefault();
+  changeBtn("#ccc", 'block', true);
   var validationState = true;
   var fields = [];
 

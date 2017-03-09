@@ -25,7 +25,7 @@ img {
 
 /* Стили для шрифтов */
 .main-title {
-  color: white;
+  color: #fff;
   font-size: 32px;
   margin-top: 0;
   padding-left: 30px;
@@ -112,7 +112,7 @@ img {
 .feedback-header {
     padding: 2px 10px;
     background-color: #0088cc;
-    color: white;
+    color: #fff;
 }
 
 /* Закрыть */
@@ -179,7 +179,6 @@ textarea[name="text"]:focus {
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  user-select: none;
   background: #0088cc;
   padding: .7em 1.5em;
   outline: none;
@@ -190,7 +189,7 @@ textarea[name="text"]:focus {
   margin-top: 20px;
   padding: 2px 16px;
   background-color: #0088cc;
-  color: white;
+  color: #fff;
 }
 
 .main-footer {
@@ -201,7 +200,7 @@ textarea[name="text"]:focus {
 }
 
 .footer-copyright {
-  color: white;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -280,4 +279,96 @@ textarea[name="text"]:focus {
   .image-block {
     max-width: 20%;
   }
+}
+
+/* Полоса прокрутки */
+#cssload-wrapper {
+  display: none;
+	width: 55px;
+	height: 5px;
+	position: absolute;
+	left: 50%;
+}
+
+#cssload-border {
+	border: 1px solid rgb(34,34,34);
+	height: 100%;
+	width: 100%;
+	position: relative;
+	left: -50%;
+	top: -50%;
+	padding: 1px 1px;
+}
+
+#cssload-whitespace {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+#cssload-line {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0,0,0);
+	animation: cssload-slide 3.25s steps(40) infinite;
+		-o-animation: cssload-slide 3.25s steps(40) infinite;
+		-ms-animation: cssload-slide 3.25s steps(40) infinite;
+		-webkit-animation: cssload-slide 3.25s steps(40) infinite;
+		-moz-animation: cssload-slide 3.25s steps(40) infinite;
+}
+
+
+
+@keyframes cssload-slide {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+@-o-keyframes cssload-slide {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+@-ms-keyframes cssload-slide {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes cssload-slide {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+@-moz-keyframes cssload-slide {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
 }

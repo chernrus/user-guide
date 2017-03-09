@@ -174,7 +174,7 @@
           Примечание. Данная группа доступна только для чтения.
         </p>
       </div>
-      
+
       <!-- Форма обратной связи -->
       <h2 class="feedback-title">
         Если у вас возникли вопросы, Вы можете воспользоваться формой обратной связи. Для этого нажмите на кнопку "Обратная связь".
@@ -199,7 +199,16 @@
               </div>
               <input name="email" type="email" placeholder="Ваш email" required>
               <textarea name="text" placeholder="Сообщение с вопросом (Не менее 10 символов)" required></textarea>
-              <button class="send-btn" type="submit">Отправить</button>
+              <button class="send-btn" type="submit" id="send-btn">Отправить</button>
+              <!-- Полоса загрузки HTML + CSS см конец файла stylles.css  http://cssload.net/en/horizontal-bars/7-->
+              <div id="cssload-wrapper">
+	               <div id="cssload-border">
+		                 <div id="cssload-whitespace">
+			                    <div id="cssload-line">
+			                    </div>
+		                  </div>
+	                </div>
+              </div>
             </form>
           </div>
           <div class="feedback-footer"></div>
@@ -208,6 +217,7 @@
     </div>
 
     <footer class="main-footer">
+      <button></button>
       <div class="footer-copyright">
         <p>Разработано:</p>
         <a class="btn" href="https://github.com/chernrus/user-guide" target="_blank">Ruslan Chernov</a>
