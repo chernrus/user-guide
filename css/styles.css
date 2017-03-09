@@ -1,7 +1,12 @@
+html {
+    box-sizing: border-box;
+}
+
 body {
   width: 100%;
   text-align: center;
-  font-size: 14px;
+  /*font-size: 14px;*/
+  font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Verdana,sans-serif;
   margin: 0;
 }
 
@@ -16,6 +21,38 @@ img {
   display: table;
   clear: both;
 }
+
+.main-header {
+  background-color: #0088cc;
+}
+
+/* Стили для шрифтов */
+.main-title {
+  color: white;
+  font-size: 32px;
+  margin-top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.container-guide-title {
+  margin-top: 32px;
+}
+
+.guide-title {
+  font-size: 20px;
+  margin-top: 32px;
+}
+
+.image-title {
+  color: #708090;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+
 
 /* Блок-обертка основного содержимого страницы -
 инструкций для Android и IOS устройств
@@ -41,12 +78,12 @@ img {
   margin: 0 auto;
 }
 
-/* Размер шрифта для примечаний в параграфе - чтобы не было мелко */
-.container-guide p {
-  font-size: 14px;
+.image-block {
+  margin-top: 15px;
 }
 
-.image-title {
+/* Размер шрифта для примечаний в параграфе - чтобы не было мелко */
+.remark {
   font-size: 16px;
 }
 
@@ -65,16 +102,12 @@ img {
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
   animation-duration: 0.4s
-  /*width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;*/
 }
 
 /* feedback Content */
 .feedback-content {
     position: fixed;
+    /*margin: 0 auto;*/
     bottom: 0;
     background-color: #fefefe;
     width: 100%;
@@ -101,29 +134,14 @@ img {
 
 .feedback-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #0088cc;
     color: white;
 }
 
-/*.feedback-body {padding: 2px 16px;}*/
-
 .feedback-body {
-  display: inline-block;
-  padding-left: 25px;
-  padding-right: 25px;
-  z-index: 200;
+  margin: 0 auto;
+  width: 450px;
 }
-
-
-/*.overlay {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 100;
-}*/
 
 .feedback-form {
   width: 420px;
@@ -131,7 +149,7 @@ img {
 }
 
 .feedback-form input {
-  width: 400px;
+  width: 95%;
   padding: 5px 2%;
   margin: 10px 0;
 }
@@ -144,15 +162,10 @@ img {
 
 input[type="text"],
 input[type="email"] {
-  height: 25px;
+  font: 14px arial,sans-serif;
+  line-height: 30px;
   border: 1px solid #aaa;
   padding: 4px 8px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea[name="text"]:focus {
-  border: 1px solid #000;
 }
 
 select[name="country-code"] {
@@ -161,6 +174,7 @@ select[name="country-code"] {
 }
 
 input[name="phone"] {
+  line-height: 30px;
   width: 76%;
 }
 
@@ -171,15 +185,40 @@ textarea[name="text"] {
   margin: 10px 0;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea[name="text"]:focus {
+  font: 14px arial,sans-serif;
+  line-height: 30px;
+  border: 1px solid #000;
+}
+
 .send-btn,
 .feedback-btn {
+
   color: #fff; /* цвет текста */
   text-decoration: none; /* убирать подчёркивание у ссылок */
   user-select: none; /* убирать выделение текста */
-  background: rgb(56,212,56); /* фон кнопки */
+  background: #0088cc; /* фон кнопки */
+  margin-top: 30px;
   padding: .7em 1.5em; /* отступ от текста */
   outline: none; /* убирать контур в Mozilla */
 }
+
+.main-footer {
+  background-color: #0088cc;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.footer-copyright {
+  color: white;
+  font-size: 14px;
+
+}
+
+
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
@@ -212,7 +251,7 @@ textarea[name="text"] {
     margin-right: 20px;
   }
   .image-title {
-    min-height: 60px;
+    min-height: 70px;
   }
 }
 

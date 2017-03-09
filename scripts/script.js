@@ -41,7 +41,7 @@ window.onclick = function(event) {
 // };
 
 var validateName = function (name) {
-  return (name.length >= 5);
+  return (name.length > 5);
 };
 
 // Валидатор для телефона
@@ -57,7 +57,7 @@ var validateEmail = function (email) {
 };
 
 var validateText = function (text) {
-  return (text.length >= 10);
+  return (text.length > 10);
 };
 
 // Удаление символов из телефона
