@@ -1,13 +1,10 @@
-html {
-    box-sizing: border-box;
-}
-
-body {
+html, body {
   width: 100%;
   text-align: center;
-  /*font-size: 14px;*/
   font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Verdana,sans-serif;
   margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Размер изображения (по ширине 100%) */
@@ -85,101 +82,88 @@ img {
   font-size: 16px;
 }
 
+/* Всплывающие окно формы */
 .feedback-container {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  bottom: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  padding-bottom: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
 }
 
-/* feedback Content */
+/* содержимое окна */
 .feedback-content {
-    /*margin: 0 auto;*/
-    /*bottom: 0;*/
     background-color: #fefefe;
     width: 100%;
     height: 100%;
-    /*bottom: 0;*/
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
-    animation-duration: 0.4s
+    animation-duration: 0.7s;
 }
 
-/* The Close Button */
-.close {
+/* Заголовок, кнопка закрыть */
+.feedback-header {
+    padding: 2px 10px;
+    background-color: #0088cc;
     color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+}
+
+/* Закрыть */
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
     color: #000;
-    text-decoration: none;
     cursor: pointer;
 }
 
-.feedback-header {
-    padding: 2px 16px;
-    background-color: #0088cc;
-    color: white;
-}
-
+/* Контейнер формы */
 .feedback-body {
   margin: 0 auto;
   width: 100%;
 }
 
-.feedback-form {
-  width: 100%;
-  background: #fff;
-}
-
+/* Поля формы */
 .feedback-form input {
   width: 90%;
   padding: 5px 2%;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="email"] {
   font: 14px arial,sans-serif;
   line-height: 30px;
   border: 1px solid #aaa;
 }
 
+textarea[name="text"] {
+  font: 14px arial,sans-serif;
+  width: 90%;
+  height: 80px;
+  padding: 5px 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+
 select[name="country-code"] {
   height: 30px;
   width: 70px;
-  /*font-size: 10px;*/
 }
 
 input[name="phone"] {
   line-height: 30px;
   width: 65%;
-}
-
-textarea[name="text"] {
-  width: 90%;
-  height: 80px;
-  padding: 5px 2%;
-  margin: 10px 0;
-  line-height: 30px;
-  box-sizing: border-box;
 }
 
 input[type="text"]:focus,
@@ -192,13 +176,21 @@ textarea[name="text"]:focus {
 
 .send-btn,
 .feedback-btn {
-  color: #fff; /* цвет текста */
-  text-decoration: none; /* убирать подчёркивание у ссылок */
-  user-select: none; /* убирать выделение текста */
-  background: #0088cc; /* фон кнопки */
-    /*margin-top: 30px;*/
-  padding: .7em 1.5em; /* отступ от текста */
-  outline: none; /* убирать контур в Mozilla */
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  user-select: none;
+  background: #0088cc;
+  padding: .7em 1.5em;
+  outline: none;
+}
+
+.feedback-footer {
+  display: none;
+  margin-top: 20px;
+  padding: 2px 16px;
+  background-color: #0088cc;
+  color: white;
 }
 
 .main-footer {
@@ -211,10 +203,9 @@ textarea[name="text"]:focus {
 .footer-copyright {
   color: white;
   font-size: 14px;
-
 }
 
-/* Анимация */
+/* Анимация - https://www.w3schools.com/howto/howto_css_modals.asp*/
 @-webkit-keyframes slideIn {
     from {bottom: -300px; opacity: 0}
     to {bottom: 0; opacity: 1}
@@ -235,14 +226,12 @@ textarea[name="text"]:focus {
     to {opacity: 1}
 }
 
-
-
 /* Медиа запрос для разрешения 500px поширине
 (фаблеты, мобильные - горизонтальная ориентация) */
 @media (min-width: 500px) {
   /* Блок изображения img и заголовка изображения .image-title */
   .image-block {
-    float: left;
+    display: inline-block;
     max-width: 45%;
     margin-right: 20px;
   }
@@ -261,6 +250,7 @@ textarea[name="text"]:focus {
     position: fixed;
     bottom: 0;
     height: auto;
+    padding-bottom: 25px;
   }
   .feedback-body {
     margin: 0 auto;
@@ -270,7 +260,6 @@ textarea[name="text"]:focus {
     width: 73%;
   }
 }
-
 
 /* Медиа запрос для разрешения 992px поширине
 (средние экраны) */
