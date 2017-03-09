@@ -124,7 +124,7 @@ var showSuccessMessage = function () {
 };
 
 var changeFieldColor = function (atributeName, color) {
-  document.getElementsByName(atributeName)[0].style.border= '2px solid ' + color;
+  document.getElementsByName(atributeName)[0].style.border= '1px solid ' + color;
 };
 
 // main функция - валидация формы, отправка данных - sendForm

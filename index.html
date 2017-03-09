@@ -185,16 +185,16 @@
           <span class="responseMessage"></span>
           <div class="feedback-body">
             <form class="feedback-form" name="formH" onsubmit="validation(event)">
-              <input name="name" type="text" placeholder="Ваше имя" required>
+              <input name="name" type="text" placeholder="Ваше имя (Не менее 5 символов)" required>
               <div class="phone-block">
                 <select name="country-code">
-                  <option data-countryCode="RU" value="7" Selected>RU (+7)</option>
-                  <option data-countryCode="US" value="1">USA (+1)</option>
+                  <option data-countryCode="RU" value="7" Selected>RU +7</option>
+                  <option data-countryCode="US" value="1">USA +1</option>
                 </select>
                 <input name="phone" type="text" placeholder="Ваш номер телефона" required>
               </div>
               <input name="email" type="email" placeholder="Ваш email" required>
-              <textarea name="text" placeholder="Сообщение с вопросом" required></textarea>
+              <textarea name="text" placeholder="Сообщение с вопросом (Не менее 10 символов)" required></textarea>
               <button class="send-btn" type="submit">Отправить</button>
             </form>
           </div>
@@ -202,7 +202,7 @@
       </div>
     </div>
   </body>
-  
+
   <footer class="main-footer">
     <section class="footer-copyright">
       <p>Разработано:</p>
